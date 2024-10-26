@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 project(PJSIP_CMAKE)
+SET(PROJECT_BASE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 SET(THIRD_PARTY_LIB_TARGET_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/)
 add_subdirectory(./pjlib/)
 add_subdirectory(./pjlib/src/pjlib-test/)
+add_subdirectory(./pjlib-util/)
+add_subdirectory(./pjlib-util/src/pjlib-util-test/)
