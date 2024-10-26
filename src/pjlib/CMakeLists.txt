@@ -1,0 +1,157 @@
+cmake_minimum_required(VERSION 3.0)
+project(pjlib)
+include_directories(./include/)
+SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${THIRD_PARTY_LIB_TARGET_DIRECTORY})  
+
+SET(FIRST_SRC activesock.c
+addr_resolv_sock.c
+addr_resolv_symbian.cpp
+array.c
+compat/
+config.c
+ctype.c
+errno.c
+except.c
+exception_symbian.cpp
+extra-exports.c
+fifobuf.c
+file_access_unistd.c
+file_access_win32.c
+file_io_ansi.c
+file_io_win32.c
+guid.c
+guid_android.c
+guid_bsd.c
+guid_darwin.c
+guid_simple.c
+guid_uuid.c
+guid_win32.c
+hash.c
+ioqueue_common_abs.c
+ioqueue_common_abs.h
+ioqueue_dummy.c
+ioqueue_epoll.c
+ioqueue_kqueue.c
+ioqueue_select.c
+ioqueue_symbian.cpp
+ioqueue_uwp.cpp
+ioqueue_winnt.c
+ip_helper_generic.c
+ip_helper_symbian.cpp
+ip_helper_win32.c
+ip_helper_winphone8.c
+list.c
+lock.c
+log.c
+log_writer_printk.c
+log_writer_stdout.c
+log_writer_symbian_console.cpp
+os_core_darwin.m
+os_core_symbian.cpp
+os_core_unix.c
+os_core_win32.c
+os_error_symbian.cpp
+os_error_unix.c
+os_error_win32.c
+os_info.c
+os_info_iphone.m
+os_info_symbian.cpp
+os_rwmutex.c
+os_symbian.h
+os_time_bsd.c
+os_time_common.c
+os_time_unix.c
+os_time_win32.c
+os_timestamp_common.c
+os_timestamp_posix.c
+os_timestamp_win32.c
+pool.c
+pool_buf.c
+pool_caching.c
+pool_dbg.c
+pool_policy_kmalloc.c
+pool_policy_malloc.c
+pool_policy_new.cpp
+pool_signature.h
+rand.c
+rbtree.c
+sock_bsd.c
+sock_common.c
+sock_qos_bsd.c
+sock_qos_common.c
+sock_qos_darwin.c
+sock_qos_dummy.c
+sock_qos_symbian.cpp
+sock_qos_wm.c
+sock_select.c
+sock_select_symbian.cpp
+sock_symbian.cpp
+sock_uwp.cpp
+sock_uwp.h
+ssl_sock_apple.m
+ssl_sock_common.c
+ssl_sock_darwin.c
+ssl_sock_dump.c
+ssl_sock_gtls.c
+ssl_sock_imp_common.c
+ssl_sock_imp_common.h
+ssl_sock_ossl.c
+ssl_sock_symbian.cpp
+string.c
+symbols.c
+timer.c
+timer_symbian.cpp
+types.c
+unicode_symbian.cpp
+unicode_win32.c)
+
+SET(PJ_LIB_SOURCE ./src/pj/activesock.c 
+                  ./src/pj/hash.c
+                  ./include/pj/list.c
+                  ./src/pj/string.c
+                  ./src/pj/except.c
+                  ./src/pj/pool_caching.c
+                  ./src/pj/fifobuf.c
+                  ./src/pj/log.c 
+                  ./src/pj/pool.c
+                  ./src/pj/pool_caching.c
+                  ./src/pj/pool_buf.c
+                  ./src/pj/config.c
+                  ./src/pj/symbols.c
+                  ./src/pj/lock.c
+                  ./src/pj/errno.c
+                  ./src/pj/rand.c
+                  ./src/pj/array.c
+                  ./src/pj/types.c
+                  ./src/pj/rbtree.c
+                  ./src/pj/sock_common.c
+                  ./src/pj/os_timestamp_common.c
+                  ./src/pj/os_time_common.c
+                  ./src/pj/sock_common.c
+                  ./src/pj/sock_bsd.c
+                  ./src/pj/addr_resolv_sock.c
+                  ./src/pj/timer.c
+                  ./src/pj/sock_qos_common.c
+                  ./src/pj/pool_policy_malloc.c
+                  ./src/pj/sock_select.c
+                  ./src/pj/os_info.c
+                  #./src/pj/pool_policy_malloc.c
+                  #WINDOWS
+                  ./src/pj/log_writer_stdout.c
+                  #./src/pj/ioqueue_winnt.c
+                  ./src/pj/unicode_win32.c
+                  ./src/pj/file_access_win32.c 
+                  ./src/pj/file_io_win32.c 
+                  ./src/pj/os_core_win32.c
+                  ./src/pj/os_time_win32.c
+                  ./src/pj/os_timestamp_win32.c
+                  ./src/pj/os_error_win32.c
+                  ./src/pj/guid_win32.c
+                  ./src/pj/ip_helper_win32.c
+                  ./src/pj/sock_bsd.c
+                  ./src/pj/ioqueue_winnt.c
+                  #./src/pj/ioqueue_uwp.cpp
+                  #./src/pj/sock_uwp.cpp
+)
+#./src/pj/ssl_sock_imp_common.c)
+add_library(pjlib ${PJ_LIB_SOURCE})
