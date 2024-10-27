@@ -28,6 +28,7 @@ add_executable(pjnath-test ./main.c
 
 if(CMAKE_HOST_LINUX)
 link_directories(${THIRD_PARTY_LIB_TARGET_DIRECTORY})
+target_link_libraries(pjnath-test libpjnath.a)
 target_link_libraries(pjnath-test libpjlib-util.a)
 target_link_libraries(pjnath-test libpjlib.a)
 target_link_libraries(pjnath-test uuid)
