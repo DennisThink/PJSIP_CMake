@@ -35,6 +35,7 @@ add_executable(pjmedia-test ./main.c
 
 if(CMAKE_HOST_LINUX)
 link_directories(${THIRD_PARTY_LIB_TARGET_DIRECTORY})
+target_link_libraries(pjmedia-test libpjmedia.a)
 target_link_libraries(pjmedia-test libpjlib-util.a)
 target_link_libraries(pjmedia-test libpjlib.a)
 target_link_libraries(pjmedia-test uuid)
