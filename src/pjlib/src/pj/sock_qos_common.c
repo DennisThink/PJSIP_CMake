@@ -107,7 +107,9 @@ PJ_DEF(pj_status_t) pj_sock_apply_qos( pj_sock_t sock,
         sock_name = "socket";
 
     if (qos_type != PJ_QOS_TYPE_BEST_EFFORT) {
-        qos_type_rc = pj_sock_set_qos_type(sock, qos_type);
+        //DennisThink Begin
+        //qos_type_rc = pj_sock_set_qos_type(sock, qos_type);
+        //DennisThiink End
 
         if (qos_type_rc != PJ_SUCCESS) {
             pj_perror(log_level, log_sender,  qos_type_rc, 
@@ -117,7 +119,9 @@ PJ_DEF(pj_status_t) pj_sock_apply_qos( pj_sock_t sock,
     }
 
     if (qos_params && qos_params->flags) {
-        qos_params_rc = pj_sock_set_qos_params(sock, qos_params);
+        //DennisThink Begin
+        //qos_params_rc = pj_sock_set_qos_params(sock, qos_params);
+        //DennisThink End
         if (qos_params_rc != PJ_SUCCESS) {
             pj_perror(log_level, log_sender,  qos_params_rc, 
                       "Error setting QoS params (flags=%d) to %s", 
