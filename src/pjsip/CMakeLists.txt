@@ -29,7 +29,7 @@ SET(PJ_SIP_SOURCE
 ./src/pjsip/sip_tel_uri.c
 ./src/pjsip/sip_tel_uri_wrap.cpp
 ./src/pjsip/sip_transaction.c
-#./src/pjsip/sip_transport.c
+./src/pjsip/sip_transport.c
 ./src/pjsip/sip_transport_loop.c
 ./src/pjsip/sip_transport_tcp.c
 #./src/pjsip/sip_transport_tls.c

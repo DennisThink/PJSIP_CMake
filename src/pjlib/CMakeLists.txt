@@ -25,6 +25,7 @@ SET(PJ_LIB_PLATFORM_SOURCE
 )
 elseif(CMAKE_HOST_WIN32)
 SET(PJ_LIB_PLATFORM_SOURCE  ./src/pj/unicode_win32.c
+./src/pj/guid.c
 ./src/pj/file_access_win32.c 
 ./src/pj/file_io_win32.c 
 ./src/pj/os_core_win32.c
