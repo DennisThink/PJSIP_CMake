@@ -43,4 +43,6 @@ SET(PJ_SIP_SOURCE
 ./src/pjsip/sip_util_statefull.c
 #./src/pjsip/sip_util_wrap.cpp
 )
-add_library(pjsip ${PJ_SIP_SOURCE})
+
+SET(PJ_SIP_UA_SOURCE ./src/pjsip-ua/sip_reg.c)
+add_library(pjsip ${PJ_SIP_SOURCE} ${PJ_SIP_UA_SOURCE})
