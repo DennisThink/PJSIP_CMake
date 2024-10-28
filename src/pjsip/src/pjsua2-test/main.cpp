@@ -29,10 +29,10 @@ int main(int argc, char *argv[])
 
     epCfg.uaConfig.userAgent = "pjsua++-test";
 
-    ep.libCreate();
-    ep.libInit(epCfg);
-    ep.libStart();
-    ep.libDestroy();
+   // ep.libCreate();
+   // ep.libInit(epCfg);
+   // ep.libStart();
+   // ep.libDestroy();
 
     return 0;
 }

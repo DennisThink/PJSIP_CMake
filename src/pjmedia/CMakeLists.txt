@@ -2,10 +2,13 @@ cmake_minimum_required(VERSION 3.0)
 project(pjmedia)
 SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${THIRD_PARTY_LIB_TARGET_DIRECTORY})  
 SET(LIBRARY_OUTPUT_PATH ${THIRD_PARTY_LIB_TARGET_DIRECTORY}) 
+
+include_directories(${PJSIP_BASE_SOURCE_DIR}/third_party/webrtc/src/)
+include_directories(${PJSIP_BASE_SOURCE_DIR}/third_party/speex/include/)
+include_directories(${PJSIP_BASE_SOURCE_DIR}/pjlib/include/)
+include_directories(${PJSIP_BASE_SOURCE_DIR}/pjlib-util/include/)
+include_directories(${PJSIP_BASE_SOURCE_DIR}/pjnath/include/)
 include_directories(./include/)
-include_directories(${PROJECT_BASE_SOURCE_DIR}/pjlib/include/)
-include_directories(${PROJECT_BASE_SOURCE_DIR}/pjlib-util/include/)
-include_directories(${PROJECT_BASE_SOURCE_DIR}/pjnath/include/)
 SET(PJ_MEDIA_LIB_SOURCE ./src/pjmedia/audiodev.c
 ./src/pjmedia/alaw_ulaw.c
 ./src/pjmedia/alaw_ulaw_table.c
@@ -24,9 +27,9 @@ SET(PJ_MEDIA_LIB_SOURCE ./src/pjmedia/audiodev.c
 ./src/pjmedia/echo_common.c
 #echo_internal.h
 ./src/pjmedia/echo_port.c
-#./src/pjmedia/echo_speex.c
+./src/pjmedia/echo_speex.c
 ./src/pjmedia/echo_suppress.c
-#./src/pjmedia/echo_webrtc.c
+./src/pjmedia/echo_webrtc.c
 #./src/pjmedia/echo_webrtc_aec3.cpp
 ./src/pjmedia/endpoint.c
 ./src/pjmedia/errno.c
