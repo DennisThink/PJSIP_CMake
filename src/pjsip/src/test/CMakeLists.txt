@@ -29,11 +29,11 @@ add_executable(pjsip-test ./main.c
 #./transport_tcp_test.c
 #./transport_test.c
 #./transport_udp_test.c
-#./tsx_basic_test.c
+./tsx_basic_test.c
 #./tsx_bench.c
 #./tsx_uac_test.c
 #./tsx_uas_test.c
-#./txdata_test.c
+./txdata_test.c
 ./uri_test.c
 )
 
