@@ -21,7 +21,7 @@ add_executable(pjsip-test ./main.c
 ./msg_err_test.c
 ./msg_logger.c
 ./msg_test.c
-#./multipart_test.c
+./multipart_test.c
 #./regc_test.c
 ./test.c
 #test.h
