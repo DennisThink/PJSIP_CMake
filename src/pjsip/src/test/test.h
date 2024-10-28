@@ -62,7 +62,6 @@ extern pj_caching_pool caching_pool;
 
 //DennisThink Begin
 //#define INCLUDE_URI_TEST        INCLUDE_MESSAGING_GROUP
-#define INCLUDE_URI_TEST        1
 #define INCLUDE_MSG_TEST        INCLUDE_MESSAGING_GROUP
 #define INCLUDE_MULTIPART_TEST  INCLUDE_MESSAGING_GROUP
 #define INCLUDE_TXDATA_TEST     INCLUDE_MESSAGING_GROUP
@@ -75,6 +74,9 @@ extern pj_caching_pool caching_pool;
 #define INCLUDE_TSX_DESTROY_TEST INCLUDE_TSX_GROUP
 #define INCLUDE_INV_OA_TEST     INCLUDE_INV_GROUP
 #define INCLUDE_REGC_TEST       INCLUDE_REGC_GROUP
+
+#define INCLUDE_URI_TEST        1
+#define INCLUDE_MSG_TEST        1
 //DennisThink End
 
 
