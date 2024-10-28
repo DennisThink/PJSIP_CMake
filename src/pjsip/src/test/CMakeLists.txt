@@ -13,7 +13,7 @@ link_directories(${THIRD_PARTY_LIB_TARGET_DIRECTORY})
 
 add_executable(pjsip-test ./main.c
 #./dlg_core_test.c
-#./dns_test.c
+./dns_test.c
 #./inv_offer_answer_test.c
 #./main.c
 #./main_rtems.c
@@ -31,8 +31,8 @@ add_executable(pjsip-test ./main.c
 ./transport_udp_test.c
 ./tsx_basic_test.c
 #./tsx_bench.c
-#./tsx_uac_test.c
-#./tsx_uas_test.c
+./tsx_uac_test.c
+./tsx_uas_test.c
 ./txdata_test.c
 ./uri_test.c
 )

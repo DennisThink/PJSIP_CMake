@@ -83,10 +83,10 @@ extern pj_caching_pool caching_pool;
 #define INCLUDE_UDP_TEST        1
 #define INCLUDE_LOOP_TEST       1
 #define INCLUDE_TCP_TEST        1
-#define INCLUDE_RESOLVE_TEST    INCLUDE_TRANSPORT_GROUP
-#define INCLUDE_TSX_TEST        INCLUDE_TSX_GROUP
+#define INCLUDE_RESOLVE_TEST    1
+#define INCLUDE_TSX_TEST        1
 #define INCLUDE_TSX_DESTROY_TEST INCLUDE_TSX_GROUP
-#define INCLUDE_INV_OA_TEST     INCLUDE_INV_GROUP
+#define INCLUDE_INV_OA_TEST     0
 #define INCLUDE_REGC_TEST       1
 //DennisThink End
 
