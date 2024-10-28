@@ -34,7 +34,7 @@ add_executable(pjsip-test ./main.c
 #./tsx_uac_test.c
 #./tsx_uas_test.c
 #./txdata_test.c
-#./uri_test.c
+./uri_test.c
 )
 
 
