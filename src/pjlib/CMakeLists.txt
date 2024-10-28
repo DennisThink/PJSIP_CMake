@@ -67,7 +67,7 @@ SET(PJ_LIB_SOURCE ./src/pj/activesock.c
                   ./src/pj/pool_policy_malloc.c
                   ./src/pj/sock_select.c
                   ./src/pj/os_info.c
-               
+                  ./src/pj/guid.c
                   ./src/pj/log_writer_stdout.c
                   #File for different platform
                   ${PJ_LIB_PLATFORM_SOURCE}
