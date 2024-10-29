@@ -10,6 +10,10 @@ include_directories(${PJSIP_BASE_SOURCE_DIR}/pjlib/include/)
 include_directories(${PJSIP_BASE_SOURCE_DIR}/pjlib-util/include/)
 include_directories(${PJSIP_BASE_SOURCE_DIR}/pjnath/include/)
 include_directories(./include/)
+if(CMAKE_HOST_LINUX)
+elseif(CMAKE_HOST_WIN32)
+add_compile_options(-UD_MSC_VER)
+endif()
 SET(PJ_MEDIA_LIB_SOURCE ./src/pjmedia/audiodev.c
 ./src/pjmedia/alaw_ulaw.c
 ./src/pjmedia/alaw_ulaw_table.c
@@ -98,7 +102,6 @@ SET(PJMEDIA_CODEC_SOURCE
 ./src/pjmedia-codec/audio_codecs.c
 ./src/pjmedia-codec/bcg729.c
 ./src/pjmedia-codec/ffmpeg_vid_codecs.c
-./src/pjmedia-codec/g722/
 ./src/pjmedia-codec/g722.c
 ./src/pjmedia-codec/g7221.c
 ./src/pjmedia-codec/g7221_sdp_match.c
@@ -114,7 +117,6 @@ SET(PJMEDIA_CODEC_SOURCE
 ./src/pjmedia-codec/passthrough.c
 ./src/pjmedia-codec/silk.c
 ./src/pjmedia-codec/speex_codec.c
-./src/pjmedia-codec/vid_toolbox.m
 ./src/pjmedia-codec/vpx.c
 ./src/pjmedia-codec/vpx_packetizer.c
 
@@ -124,14 +126,12 @@ SET(PJMEDIA_CODEC_SOURCE
 
 SET(PJMEDIA_AUDIO_ENCODE_SOURCE 
 ./src/pjmedia-audiodev/alsa_dev.c
-./src/pjmedia-audiodev/android/
 ./src/pjmedia-audiodev/android_jni_dev.c
 ./src/pjmedia-audiodev/audiodev.c
 ./src/pjmedia-audiodev/audiotest.c
 ./src/pjmedia-audiodev/bb10_dev.c
 ./src/pjmedia-audiodev/bdimad_dev.c
-./src/pjmedia-audiodev/coreaudio_dev.m
-./src/pjmedia-audiodev/errno.c
+#./src/pjmedia-audiodev/errno.c
 ./src/pjmedia-audiodev/legacy_dev.c
 ./src/pjmedia-audiodev/null_dev.c
 ./src/pjmedia-audiodev/oboe_dev.cpp
@@ -142,6 +142,6 @@ SET(PJMEDIA_AUDIO_ENCODE_SOURCE
 ./src/pjmedia-audiodev/symb_mda_dev.cpp
 ./src/pjmedia-audiodev/symb_vas_dev.cpp
 ./src/pjmedia-audiodev/wasapi_dev.cpp
-./src/pjmedia-audiodev/wmme_dev.c
+#./src/pjmedia-audiodev/wmme_dev.c
 )
 add_library(pjmedia ${PJ_MEDIA_LIB_SOURCE} ${PJMEDIA_CODEC_SOURCE} ${PJMEDIA_AUDIO_ENCODE_SOURCE})

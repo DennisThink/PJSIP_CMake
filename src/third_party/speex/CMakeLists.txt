@@ -2,10 +2,13 @@ project(pjsip_speex)
 SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${THIRD_PARTY_LIB_TARGET_DIRECTORY})  
 SET(LIBRARY_OUTPUT_PATH ${THIRD_PARTY_LIB_TARGET_DIRECTORY})
 add_compile_options(-DFLOATING_POINT=1)
-add_compile_options(-DHAVE_CONFIG_H)
 add_compile_options(-D_USE_MATH_DEFINES)
 include_directories(./include/)
+if(CMAKE_HOST_LINUX)
+elseif(CMAKE_HOST_WIN32)
+add_compile_options(-DHAVE_CONFIG_H)
 include_directories(./win32/)
+endif()
 SET(LIB_SPEEX_SOURCE 
 ./libspeex/arch.h
 ./libspeex/bits.c
