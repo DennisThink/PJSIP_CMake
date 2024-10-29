@@ -5,6 +5,7 @@ SET(LIBRARY_OUTPUT_PATH ${THIRD_PARTY_LIB_TARGET_DIRECTORY})
 
 include_directories(${PJSIP_BASE_SOURCE_DIR}/third_party/webrtc/src/)
 include_directories(${PJSIP_BASE_SOURCE_DIR}/third_party/speex/include/)
+include_directories(${PJSIP_BASE_SOURCE_DIR}/third_party/)
 include_directories(${PJSIP_BASE_SOURCE_DIR}/pjlib/include/)
 include_directories(${PJSIP_BASE_SOURCE_DIR}/pjlib-util/include/)
 include_directories(${PJSIP_BASE_SOURCE_DIR}/pjnath/include/)
@@ -45,7 +46,7 @@ SET(PJ_MEDIA_LIB_SOURCE ./src/pjmedia/audiodev.c
 ./src/pjmedia/null_port.c
 ./src/pjmedia/plc_common.c
 ./src/pjmedia/port.c
-#./src/pjmedia/resample_libsamplerate.c
+./src/pjmedia/resample_libsamplerate.c
 ./src/pjmedia/resample_port.c
 #./src/pjmedia/resample_resample.c
 ./src/pjmedia/resample_speex.c
@@ -89,4 +90,32 @@ SET(PJ_MEDIA_LIB_SOURCE ./src/pjmedia/audiodev.c
 ./src/pjmedia/wave.c
 ./src/pjmedia/wsola.c
 )
-add_library(pjmedia ${PJ_MEDIA_LIB_SOURCE})
+
+SET(PJMEDIA_CODEC_SOURCE 
+./src/pjmedia-codec/amr_sdp_match.c
+./src/pjmedia-codec/and_aud_mediacodec.cpp
+./src/pjmedia-codec/and_vid_mediacodec.cpp
+./src/pjmedia-codec/audio_codecs.c
+./src/pjmedia-codec/bcg729.c
+./src/pjmedia-codec/ffmpeg_vid_codecs.c
+./src/pjmedia-codec/g722/
+./src/pjmedia-codec/g722.c
+./src/pjmedia-codec/g7221.c
+./src/pjmedia-codec/g7221_sdp_match.c
+./src/pjmedia-codec/gsm.c
+./src/pjmedia-codec/h263_packetizer.c
+./src/pjmedia-codec/h264_packetizer.c
+./src/pjmedia-codec/ilbc.c
+./src/pjmedia-codec/ipp_codecs.c
+./src/pjmedia-codec/l16.c
+./src/pjmedia-codec/opencore_amr.c
+./src/pjmedia-codec/openh264.cpp
+./src/pjmedia-codec/opus.c
+./src/pjmedia-codec/passthrough.c
+./src/pjmedia-codec/silk.c
+./src/pjmedia-codec/speex_codec.c
+./src/pjmedia-codec/vid_toolbox.m
+./src/pjmedia-codec/vpx.c
+./src/pjmedia-codec/vpx_packetizer.c
+)
+add_library(pjmedia ${PJ_MEDIA_LIB_SOURCE} ${PJMEDIA_CODEC_SOURCE})
