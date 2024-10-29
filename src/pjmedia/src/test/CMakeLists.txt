@@ -1,8 +1,8 @@
 project(pjmedia-test)
-include_directories(${PROJECT_BASE_SOURCE_DIR}/pjlib/include/)
-include_directories(${PROJECT_BASE_SOURCE_DIR}/pjlib-util/include/)
-include_directories(${PROJECT_BASE_SOURCE_DIR}/pjnath/include/)
-include_directories(${PROJECT_BASE_SOURCE_DIR}/pjmedia/include/)
+include_directories(${PJSIP_BASE_SOURCE_DIR}/pjlib/include/)
+include_directories(${PJSIP_BASE_SOURCE_DIR}/pjlib-util/include/)
+include_directories(${PJSIP_BASE_SOURCE_DIR}/pjnath/include/)
+include_directories(${PJSIP_BASE_SOURCE_DIR}/pjmedia/include/)
 include_directories(../../include/)
 
 if(CMAKE_HOST_LINUX)

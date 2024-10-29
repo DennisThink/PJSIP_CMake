@@ -1,6 +1,6 @@
 project(pjnath-test)
-include_directories(${PROJECT_BASE_SOURCE_DIR}/pjlib/include/)
-include_directories(${PROJECT_BASE_SOURCE_DIR}/pjlib-util/include/)
+include_directories(${PJSIP_BASE_SOURCE_DIR}/pjlib/include/)
+include_directories(${PJSIP_BASE_SOURCE_DIR}/pjlib-util/include/)
 include_directories(../../include/)
 
 if(CMAKE_HOST_LINUX)

@@ -117,5 +117,31 @@ SET(PJMEDIA_CODEC_SOURCE
 ./src/pjmedia-codec/vid_toolbox.m
 ./src/pjmedia-codec/vpx.c
 ./src/pjmedia-codec/vpx_packetizer.c
+
+./src/pjmedia-codec/g722/g722_dec.c
+./src/pjmedia-codec/g722/g722_enc.c
 )
-add_library(pjmedia ${PJ_MEDIA_LIB_SOURCE} ${PJMEDIA_CODEC_SOURCE})
+
+SET(PJMEDIA_AUDIO_ENCODE_SOURCE 
+./src/pjmedia-audiodev/alsa_dev.c
+./src/pjmedia-audiodev/android/
+./src/pjmedia-audiodev/android_jni_dev.c
+./src/pjmedia-audiodev/audiodev.c
+./src/pjmedia-audiodev/audiotest.c
+./src/pjmedia-audiodev/bb10_dev.c
+./src/pjmedia-audiodev/bdimad_dev.c
+./src/pjmedia-audiodev/coreaudio_dev.m
+./src/pjmedia-audiodev/errno.c
+./src/pjmedia-audiodev/legacy_dev.c
+./src/pjmedia-audiodev/null_dev.c
+./src/pjmedia-audiodev/oboe_dev.cpp
+./src/pjmedia-audiodev/opensl_dev.c
+./src/pjmedia-audiodev/pa_dev.c
+./src/pjmedia-audiodev/s60_g729_bitstream.h
+./src/pjmedia-audiodev/symb_aps_dev.cpp
+./src/pjmedia-audiodev/symb_mda_dev.cpp
+./src/pjmedia-audiodev/symb_vas_dev.cpp
+./src/pjmedia-audiodev/wasapi_dev.cpp
+./src/pjmedia-audiodev/wmme_dev.c
+)
+add_library(pjmedia ${PJ_MEDIA_LIB_SOURCE} ${PJMEDIA_CODEC_SOURCE} ${PJMEDIA_AUDIO_ENCODE_SOURCE})

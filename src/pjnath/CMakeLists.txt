@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 project(pjnath)
 include_directories(./include/)
-include_directories(${PROJECT_BASE_SOURCE_DIR}/pjlib/include/)
-include_directories(${PROJECT_BASE_SOURCE_DIR}/pjlib-util/include/)
+include_directories(${PJSIP_BASE_SOURCE_DIR}/pjlib/include/)
+include_directories(${PJSIP_BASE_SOURCE_DIR}/pjlib-util/include/)
 SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${THIRD_PARTY_LIB_TARGET_DIRECTORY})  
 SET(LIBRARY_OUTPUT_PATH ${THIRD_PARTY_LIB_TARGET_DIRECTORY}) 
 SET(PJ_NATH_LIB_SOURCE ./src/pjnath/errno.c
