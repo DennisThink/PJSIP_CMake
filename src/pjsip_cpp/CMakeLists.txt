@@ -1,0 +1,7 @@
+#cmake_minimum_required(VERSION 3.0)
+project(PJSIP_CPP)
+include_directories(./src/include/)
+SET(PJSIP_WARPPER ./src/source/pjsip_phone_client.cpp)
+SET(PJSIP_CPP_LIB_FILE ./src/source/phone_base.cpp)
+SET(PJSIP_CPP_MAIN_FILE ./src/main.cpp)
+add_executable(dtphone ${PJSIP_CPP_MAIN_FILE} ${PJSIP_CPP_LIB_FILE} ${PJSIP_WARPPER})
